@@ -1,15 +1,15 @@
 # Connect Obi1x0 to google voice with asterisk (Naf’s gvsip) only 
 Long story short, google dropped XMMP and Obitalk dropped Obi1x0, we didn't hear/make calls from obi anymore.
-Until I saw [Nafs Gvsip] worked with openPBX and Incredible PBX. But I don't like the idea of DDD and LAMP.
+Until I saw [Nafs Gvsip] worked with openPBX and Incredible PBX. But I don't like the idea of DID(Direct inward dial) and LAMP( Linux, Apache, MySQL, PHP/Perl/Python).
 
-I'm able to set up a asterisk server with Naf’s gvsip, to work with obi100 and google voice without DDD and OPENPBX. 
-It show that asterisk alone could easy work for one google voice number and one sipphone.
-It should work with a few google voice numbers and a few sipphones at the same time if you know how to write the extensions.conf manually.
+I'm able to set up a asterisk server with Naf’s gvsip, to work with obi100 and google voice without DID and OPENPBX. 
+It shows that asterisk alone could bridge one google voice number and one sipphone easily.
+It should work for a few google voice numbers and a few sipphones at the same time if you know how to write the extensions.conf manually.
 
 The tutorial is based on Ubuntu 18.04 minimal (any ubuntu 18.04 will do, minimal will be smallet, you could consider adding ssh server for remote acess).
 
 ## Install asterisk 
-Modified from [asterisk installation].
+Modified from [Freepbx 14 & asterisk gvsip installation].
 
 ### Clone Naf’s gvsip branch:
 ```
@@ -239,7 +239,7 @@ Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, ll
 
 [known Issues]: https://github.com/naf419/asterisk/wiki
 
-[asterisk installation]: https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933
+[Freepbx 14 & asterisk gvsip installation]: https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933
 
 [OAuth 2 refresh_token for Incredible PBX]: http://nerdvittles.com/?p=26204#GVsetup
 
