@@ -192,21 +192,28 @@ sudo asterisk -cvvvvv
 ```
 You could see some module load error, that's ok.
 Then you'll see  *CLI>, this the place to type in asterisk command
+
 Tips: You could always look up asterisk command after *CLI> by asterisk command "core show help".
 
 ### Connect to google voice, controlled by pjsip.conf
-a few second after *CLI>, your should see both "Transmitting SIP request" and "Received SIP response" message.
+A few second after *CLI>, your should see both "Transmitting SIP request" and "Received SIP response" message.
+
 If you only see "Transmitting SIP request", and see SSL STATUS_FROM_SSL_ERR, you are using old openssl. 
+
 If a simple update of openssl couldn't fix it, you are out of luck. For an old system , YMMY, I failed to fix the SSL STATUS_FROM_SSL_ERR even upgrade openssl.
 
 ### Connect to sipphone
 It's better to use a softphone from [softphone list] to connect at first and then play with your sipphone. I test my system with MicroSip, it works well.
+
 For phone setting, you need set the ip address of you asterisk machine as server, port is 5060, Transport is UDP, username is 201 and password is secret1.
+
 You could use asterisk command "sip show peers" to check if phone is connected, and use "sip show peer 201" to check the detail of the phone. 
 
 ### Check the dialplan
 Asterisk it's self is a PBX through extensions.conf, which are called dialplan in asterisk.
+
 The dialplan coud be checked by asterisk command "dialplan show". You should see infomation that's very similar to what's in extensions.conf.
+
 Dial other phone number (it's better to not use google number, there's lack of ringback as in [known Issues]) from sipphone to see if the from-internal part works.
 Dial your google voice number to see if if the from-external part works.
 
@@ -224,11 +231,19 @@ Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, ll
 
 ## References
 [Nafs Gvsip](https://github.com/naf419/asterisk/tree/gvsip)
+
 [known Issues](https://github.com/naf419/asterisk/wiki)
+
 [pjsip.conf and rtp.conf example](https://github.com/naf419/asterisk/blob/gvsip/README.md)
-[asterisk installation] (https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933)
+
+[asterisk installation](https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933)
+
 [OAuth 2 refresh_token for Incredible PBX](http://nerdvittles.com/?p=26204#GVsetup)
+
 [OAuth 2 refresh_token for your own client](http://www.obifirmware.com/OAuth2/)
+
 [softphone list](https://www.mitbbs.com/article_t/CellularPlan/971.html)
+
 [sip.conf and extensions.conf example EN](https://hobbiesbytwinclouds.wordpress.com/2018/05/27/how-to-make-and-receive-calls-using-google-voice-without-xmpp-may-2018-revision/)
+
 [sip.conf and extensions.conf example CN](https://www.mitbbs.com/article_t/PDA/33028435.html)
