@@ -178,7 +178,7 @@ sudo sed -i -e 's/gv17775551234/'$gvnum'/' -e 's/your_own_refresh_token/'$token'
    
 areacode="your the digit area code"
 natcode="other nation code"
-sudo sed -i -e 's/xxx/'$areacode'/' -e 's/aa/'$natcode'/' /etc/asterisk/sip.conf
+sudo sed -i -e 's/xxx/'$areacode'/' -e 's/aa/'$natcode'/' /etc/asterisk/extensions.conf
 ```
 
 ### Set permissions
@@ -229,6 +229,10 @@ Ctrl+C should terminal asterisk.
 ```
 sudo update-rc.d asterisk defaults
 sudo service asterisk start
+```
+When service is running, you could check the status of the asterisk with -r option.
+```
+sudo asterisk -rvvvvv
 ```
 
 ## Acknowledgement
