@@ -165,9 +165,12 @@ EOF
 You have get your google voice number, your own refresh token ready.
 ```
 gvnum="yourgoogle voice number"
-token="your own refresh token" #follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
-oauth_clientid=466295438629-prpknsovs0b8gjfcrs0sn04s9hgn8j3d.apps.googleusercontent.com #clientid for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
-oauth_secret=4ewzJaCx275clcT4i4Hfxqo2 #secret for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+#follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+token="your own refresh token"
+#clientid for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+oauth_clientid=466295438629-prpknsovs0b8gjfcrs0sn04s9hgn8j3d.apps.googleusercontent.com
+#secret for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+oauth_secret=4ewzJaCx275clcT4i4Hfxqo2
 sudo sed -i -e 's/gv17775551234/'$gvnum'/' -e 's/your_own_refresh_token/'$token'/' \
             -e 's/your_own_oauth_clientid/'$oauth_clientid'/' -e 's/your_own_oauth_secret/'$oauth_secret'/' /etc/asterisk/pjsip.conf
    
