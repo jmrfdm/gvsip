@@ -120,7 +120,7 @@ EOF
 ### Set sip.conf as sip server
 Could be checked with asteriks command "sip show peers" and "sip show peer 201".
 ```
-cat <<EOF |sudo tee /etc/asterisk/pjsip.conf
+cat <<EOF |sudo tee /etc/asterisk/sip.conf
 [general]
 context=from-internal
 bindport=5060
