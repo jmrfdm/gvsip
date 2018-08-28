@@ -6,9 +6,10 @@ I'm able to set up a asterisk server with Naf’s gvsip, to work with obi100 and
 It show that asterisk alone could easy work for one google voice number and one sipphone.
 It should work with a few google voice numbers and a few sipphones at the same time if you know how to write the extensions.conf manually.
 
-The tutorial is based on Ubuntu 18.04 minimal (any ubuntu 18.04 will do, minimal will be smallet, you could consider adding ssh server for remote acess ).
+The tutorial is based on Ubuntu 18.04 minimal (any ubuntu 18.04 will do, minimal will be smallet, you could consider adding ssh server for remote acess).
 
-## Install asterisk
+## Install asterisk 
+Modified from [asterisk installation].
 
 ### Clone Naf’s gvsip branch:
 ```
@@ -160,9 +161,10 @@ exten => s,1,NoOp()
  same => n,Dial(SIP/201,20,D(:1))
 EOF
 ```
+Examples of [pjsip.conf and rtp.conf example], [sip.conf and extensions.conf example EN], and [sip.conf and extensions.conf example CN]
 
 ### Set up your personal information 
-You have get your google voice number, your own refresh token ready.
+You have get your google voice number, your own refresh token ready or take a look at [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
 ```
 gvnum="yourgoogle voice number"
 #follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
@@ -201,12 +203,12 @@ Tips: You could always look up asterisk command after *CLI> by asterisk command 
 ### Connect to google voice, controlled by pjsip.conf
 A few second after *CLI>, your should see both "Transmitting SIP request" and "Received SIP response" message.
 
-If you only see "Transmitting SIP request", and see SSL STATUS_FROM_SSL_ERR, you are using old openssl. 
+If you only see "Transmitting SIP request", and see SSL STATUS_FROM_SSL_ERR, you are using old openssl. [known Issues] 
 
-If a simple update of openssl couldn't fix it, you are out of luck. For an old system , YMMY, I failed to fix the SSL STATUS_FROM_SSL_ERR even upgrade openssl.
+If a simple update of openssl couldn't fix it, you are out of luck. For an old system, YMMY, I failed to fix the SSL STATUS_FROM_SSL_ERR even after upgrading openssl.
 
 ### Connect to sipphone
-It's better to use a softphone from [softphone list] to connect at first and then play with your sipphone. I test my system with MicroSip, it works well.
+It's better to use a softphone from [softphone list] to connect at first and then play with your Obi1x0. I test my system with MicroSip, it works well.
 
 For phone setting, you need set the ip address of you asterisk machine as server, port is 5060, Transport is UDP, username is 201 and password is secret1.
 
@@ -249,4 +251,4 @@ Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, ll
 
 [sip.conf and extensions.conf example CN]: https://www.mitbbs.com/article_t/PDA/33028435.html
 
-[softphone list CN]: https://www.mitbbs.com/article_t/CellularPlan/971.html
+[softphone list]: https://www.mitbbs.com/article_t/CellularPlan/971.html
