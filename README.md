@@ -1,6 +1,6 @@
 # Connect Obi1x0 to google voice with asterisk (Naf’s gvsip) only 
 Long story short, google dropped XMMP and Obitalk dropped Obi1x0, we didn't hear/make calls from obi anymore.
-Until I saw [Nafs Gvsip]: https://github.com/naf419/asterisk/tree/gvsip worked with openPBX and Incredible PBX. But I don't like the idea of DDD and LAMP.
+Until I saw [Nafs Gvsip] worked with openPBX and Incredible PBX. But I don't like the idea of DDD and LAMP.
 
 I'm able to set up a asterisk server with Naf’s gvsip, to work with obi100 and google voice without DDD and OPENPBX. 
 It show that asterisk alone could easy work for one google voice number and one sipphone.
@@ -233,19 +233,20 @@ sudo service asterisk start
 Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, llaalways@mitbbs, twinclouds@wordpress
 
 ## References
+[Nafs Gvsip]: https://github.com/naf419/asterisk/tree/gvsip
 
-[known Issues](https://github.com/naf419/asterisk/wiki)
+[known Issues]: https://github.com/naf419/asterisk/wiki
 
-[asterisk installation](https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933)
+[asterisk installation]: https://community.freepbx.org/t/how-to-guide-for-google-voice-with-freepbx-14-asterisk-gvsip-ubuntu-18-04/50933
 
-[OAuth 2 refresh_token for Incredible PBX](http://nerdvittles.com/?p=26204#GVsetup)
+[OAuth 2 refresh_token for Incredible PBX]: http://nerdvittles.com/?p=26204#GVsetup
 
-[OAuth 2 refresh_token for your own client](http://www.obifirmware.com/OAuth2/)
+[OAuth 2 refresh_token for your own client]: http://www.obifirmware.com/OAuth2/
 
-[pjsip.conf and rtp.conf example](https://github.com/naf419/asterisk/blob/gvsip/README.md)
+[pjsip.conf and rtp.conf example]: https://github.com/naf419/asterisk/blob/gvsip/README.md
 
-[sip.conf and extensions.conf example EN](https://hobbiesbytwinclouds.wordpress.com/2018/05/27/how-to-make-and-receive-calls-using-google-voice-without-xmpp-may-2018-revision/)
+[sip.conf and extensions.conf example EN]: https://hobbiesbytwinclouds.wordpress.com/2018/05/27/how-to-make-and-receive-calls-using-google-voice-without-xmpp-may-2018-revision/
 
-[sip.conf and extensions.conf example CN](https://www.mitbbs.com/article_t/PDA/33028435.html)
+[sip.conf and extensions.conf example CN]: https://www.mitbbs.com/article_t/PDA/33028435.html
 
-[softphone list CN](https://www.mitbbs.com/article_t/CellularPlan/971.html)
+[softphone list CN]: https://www.mitbbs.com/article_t/CellularPlan/971.html
