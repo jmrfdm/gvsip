@@ -232,7 +232,7 @@ sudo service asterisk start
 ```
 
 ## Acknowledgement
-Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, llaalways@mitbbs, twinclouds@wordpress
+Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, llaalways@mitbbs, amo@mitbbs, twinclouds@wordpress
 
 ## References
 [Nafs Gvsip]: https://github.com/naf419/asterisk/tree/gvsip
