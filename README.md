@@ -42,7 +42,7 @@ sudo cp configs/samples/logger.conf.sample /etc/asterisk/logger.conf   #for debu
 sudo cp configs/samples/smdi.conf.sample /etc/asterisk/smdi.conf       #for voicemail, could be deleted
 ```
 
-### Set rtp.conf
+### Set rtp.conf:
 ```
 cat << EOF | sudo tee /etc/asterisk/rtp.conf
 [general]
@@ -50,7 +50,8 @@ stunaddr=stun.l.google.com:19302
 EOF
 ```
 
-### Set pjsvp.conf for google voice, could be checked by asteriks command "pjsip show auths"
+### Set pjsvp.conf for google voice:
+Could be checked with asteriks command "pjsip show auths".
 ```
 cat << EOF | sudo tee /etc/asterisk/pjsip.conf
 [global]
@@ -115,7 +116,8 @@ outbound_registration=gvsip1
 EOF
 ```
 
-### Set sip.conf as sip server, could be checked with asteriks command "sip show peers" and "sip show peer 201".
+### Set sip.conf as sip server
+Could be checked with asteriks command "sip show peers" and "sip show peer 201".
 ```
 cat <<EOF |sudo tee /etc/asterisk/pjsip.conf
 [general]
@@ -132,7 +134,8 @@ mailbox=201@from-internal
 EOF
 ```
 
-### Set up extensions.conf by bridge from-internal and from-external with dialplan, could be checked with asteriks command "dialplan show".
+### Set up extensions.conf by bridge from-internal and from-external with dialplan
+Could be checked with asteriks command "dialplan show".
 ```
 cat <<EOF |sudo tee /etc/asterisk/extensions.conf
 [from-internal]
@@ -158,29 +161,35 @@ exten => s,1,NoOp()
 EOF
 ```
 
-### Set up your personal information, you have get your google voice number, your own refresh token
-   gvnum="yourgoogle voice number"
-   token="your own refresh token" #follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
-   oauth_clientid=466295438629-prpknsovs0b8gjfcrs0sn04s9hgn8j3d.apps.googleusercontent.com #clientid for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
-   oauth_secret=4ewzJaCx275clcT4i4Hfxqo2 #secret for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
-   sudo sed -i -e 's/gv17775551234/'$gvnum'/' -e 's/your_own_refresh_token/'$token'/' \
-               -e 's/your_own_oauth_clientid/'$oauth_clientid'/' -e 's/your_own_oauth_secret/'$oauth_secret'/' /etc/asterisk/pjsip.conf
+### Set up your personal information 
+You have get your google voice number, your own refresh token ready.
+```
+gvnum="yourgoogle voice number"
+token="your own refresh token" #follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+oauth_clientid=466295438629-prpknsovs0b8gjfcrs0sn04s9hgn8j3d.apps.googleusercontent.com #clientid for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+oauth_secret=4ewzJaCx275clcT4i4Hfxqo2 #secret for [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+sudo sed -i -e 's/gv17775551234/'$gvnum'/' -e 's/your_own_refresh_token/'$token'/' \
+            -e 's/your_own_oauth_clientid/'$oauth_clientid'/' -e 's/your_own_oauth_secret/'$oauth_secret'/' /etc/asterisk/pjsip.conf
    
-   areacode="your the digit area code"
-   natcode="other nation code"
-   sudo sed -i -e 's/xxx/'$areacode'/' -e 's/aa/'$natcode'/' /etc/asterisk/sip.conf
+areacode="your the digit area code"
+natcode="other nation code"
+sudo sed -i -e 's/xxx/'$areacode'/' -e 's/aa/'$natcode'/' /etc/asterisk/sip.conf
+```
 
 ### Set permissions
-   sudo useradd -m asterisk
-   sudo chown asterisk. /var/run/asterisk
-   sudo chown -R asterisk. /var/{lib,log,spool}/asterisk
-   sudo chown -R asterisk. /etc/asterisk /usr/lib/asterisk
+```
+sudo useradd -m asterisk
+sudo chown asterisk. /var/run/asterisk
+sudo chown -R asterisk. /var/{lib,log,spool}/asterisk
+sudo chown -R asterisk. /etc/asterisk /usr/lib/asterisk
+```
 
 ## Debug asterisk
 
 ### Start asterisk
-  sudo asterisk -cvvvvv
-
+```
+sudo asterisk -cvvvvv
+```
 You could see some module load error, that's ok.
 Then you'll see  *CLI>, this the place to type in asterisk command
 Tips: You could always look up asterisk command after *CLI> by asterisk command "core show help".
@@ -199,8 +208,16 @@ You could use asterisk command "sip show peers" to check if phone is connected, 
 Asterisk it's self is a PBX through extensions.conf, which are called dialplan in asterisk.
 The dialplan coud be checked by asterisk command "dialplan show". You should see infomation that's very similar to what's in extensions.conf.
 Dial other phone number (it's better to not use google number, there's lack of ringback as in [known Issues]) from sipphone to see if the from-internal part works.
-Dial your google voice number to see if if the from-external part works. 
+Dial your google voice number to see if if the from-external part works.
 
+### End asterisk
+Ctrl+C should terminal asterisk.
+
+### Start asterisk as service
+```
+sudo update-rc.d asterisk defaults
+sudo service asterisk start
+```
 
 ## Acknowledgement
 Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, llaalways@mitbbs, twinclouds@wordpress
