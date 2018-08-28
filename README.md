@@ -164,7 +164,7 @@ EOF
 Examples of [pjsip.conf and rtp.conf example], [sip.conf and extensions.conf example EN], and [sip.conf and extensions.conf example CN]
 
 ### Set up your personal information 
-You have get your google voice number, your own refresh token ready or take a look at [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
+You should have your google voice number and your own refresh token ready or take a look at [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
 ```
 gvnum="yourgoogle voice number"
 #follow instruction from [OAuth 2 refresh_token for Incredible PBX] or [OAuth 2 refresh_token for your own client]
