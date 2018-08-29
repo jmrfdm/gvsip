@@ -255,4 +255,4 @@ Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, ll
 
 [sip.conf and extensions.conf example CN]: https://www.mitbbs.com/article_t/PDA/33028435.html
 
-[softphone list]: https://www.mitbbs.com/article_t/CellularPlan/971.html
+[softphone list]: http://www.mitbbs.com/clubarticle_t/Prepaid/154675.html
