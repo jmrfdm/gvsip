@@ -6,7 +6,7 @@ I'm able to set up a asterisk server with Naf’s gvsip, to work with obi100 and
 It shows that asterisk alone could bridge one google voice number and one sipphone easily.
 It should work for a few google voice numbers and a few sipphones at the same time if you know how to write the extensions.conf manually.
 
-The tutorial is based on Ubuntu 18.04 minimal (any ubuntu 18.04 will do, minimal will be smallet, you could consider adding ssh server for remote acess).
+The tutorial is based on Ubuntu 18.04 minimal (any ubuntu 18.04 will do, minimal will be smallest, you could consider adding ssh server for remote acess).
 
 ## Install asterisk 
 Modified from [Freepbx 14 & asterisk gvsip installation].
@@ -255,4 +255,4 @@ Thanks for sharing from naf419@github, xekon@freepbx, ward mundy@nerdvittles, ll
 
 [sip.conf and extensions.conf example CN]: https://www.mitbbs.com/article_t/PDA/33028435.html
 
-[softphone list]: http://www.mitbbs.com/clubarticle_t/Prepaid/154675.html
+[softphone list]: https://www.mitbbs.com/article_t/CellularPlan/971.html
