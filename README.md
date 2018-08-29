@@ -37,7 +37,7 @@ sudo ldconfig
 
 ### Set initial config:
 ```
-sudo touch /etc/asterisk/{modules,ari,statsd}.conf
+sudo touch /etc/asterisk/{asterisk,ari,statsd}.conf
 sudo cp configs/samples/modules.conf.sample /etc/asterisk/modules.conf #neccsary for load modules
 sudo cp configs/samples/logger.conf.sample /etc/asterisk/logger.conf   #for debug, could be deleted after system works  
 sudo cp configs/samples/smdi.conf.sample /etc/asterisk/smdi.conf       #for voicemail, could be deleted
